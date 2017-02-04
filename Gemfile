@@ -56,6 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim'
 gem 'bootstrap'
 gem 'autoprefixer-rails'
-gem 'scss_lint'
+gem 'scss_lint', require: false
 gem 'react-rails', '~> 1.0'
 

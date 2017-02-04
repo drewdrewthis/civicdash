@@ -1,0 +1,14 @@
+{
+  "name": "CivicDash",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:drewdrewthis/civicdash.git",
+  "author": "<drewdrewthis@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-devtools": "^3.3.2"
+  }
+}

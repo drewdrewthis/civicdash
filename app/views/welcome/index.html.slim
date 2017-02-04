@@ -1,8 +1,11 @@
 .main
-  .container
-    .row
-      .col-12
-        h2 World
-        p
-       		| The time is now:
-       		= Time.now
+	header
+		.logo
+			| CivicDash
+		.user-info
+	  		= react_component('HelloComponent', {name: 'Drew'}, {prerender: true})
+	section
+		h1 Main Content
+		= react_component('MiniAppComponent', {name: 'Drew'})
+	footer
+		p This is the footer
