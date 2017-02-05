@@ -1,11 +1,13 @@
+- user = User.find_by(name: 'Jane Doe')
+
 .main
 	header
 		.logo
 			| CivicDash
 		.user-info
-	  		= react_component('HelloComponent', {name: 'Drew'})
+	  		= react_component('HelloComponent', {name: user.name, zip: user.zip})
 	section
 		h1 Main Content
-		= react_component('MiniAppComponent', {name: 'Drew'})
+		= react_component('MiniAppComponent', {zip: user.zip})
 	footer
 		p This is the footer
