@@ -1,0 +1,2 @@
+" hidden chars
+:set nolist
