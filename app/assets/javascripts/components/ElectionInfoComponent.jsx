@@ -3,6 +3,7 @@ class ElectionInfoComponent extends React.Component {
     super(props);
     this.state = {
       elections: [],
+      zip: props.zip
     };
   }
 
@@ -27,11 +28,11 @@ class ElectionInfoComponent extends React.Component {
     }
   }
 
-  getElections() {
+  getElections(zip) {
     var _this = this;
     let key = 'AIzaSyBRlnys_JqN4METSJC4x2SQRa3VexpoDHE';
     let endpoint = 'https://www.googleapis.com/civicinfo/v2/elections?key=' +
-        key;
+        key + '&address=' + zip;
 
     $.getJSON( endpoint, function( data ) {
       console.log("Election Data", data);
@@ -44,15 +45,20 @@ class ElectionInfoComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.getElections();
+    this.getElections(this.props.zip);
   }
 
   render() {
-    return (
-      <div>
-        <h2>Upcoming Elections</h2>
-        { this.renderElections() }
-      </div>
-    )
+    if (this.props.zip) {
+      return (
+        <div>
+          <h2>Upcoming US Elections</h2>
+          <div>Zipcode: {this.props.zip}</div>
+          { this.renderElections() }
+        </div>
+      )
+    } else {
+      return <GetAddressComponent />
+    }
   }
 }

@@ -46,8 +46,15 @@ body,
   }
 }
 
+.mini-apps-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .mod-mini-app {
   border: $dashed-border;
   border-radius: $border-radius;
   padding: $brand-padding;
+  margin: 1rem;
+  flex: 1;
 }

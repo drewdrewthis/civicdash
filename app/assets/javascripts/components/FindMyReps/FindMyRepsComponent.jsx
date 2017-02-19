@@ -70,7 +70,6 @@ class FindMyRepsComponent extends React.Component {
     if (this.props.zip) {
       return (
         <div>
-          <div>Zipcode: {this.props.zip}</div>
           { this.renderOffices() }
         </div>
       )
