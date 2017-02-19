@@ -31,7 +31,7 @@ class FindMyRepsComponent extends React.Component {
       return this.state.reps.map(function(rep, idx) {
         return (
           <div key={idx}>
-            <strong>{rep.name}</strong> ({rep.party === "Unknown" ? "?" : rep.party.slice(0, 3)}) > {rep.office} 
+            <strong>{rep.name}</strong> ({rep.party === "Unknown" ? "?" : rep.party.slice(0, 3)}) &gt; {rep.office}
           </div>
         )
       });
@@ -41,19 +41,25 @@ class FindMyRepsComponent extends React.Component {
   }
 
   getData(zip) {
+    var _this = this;
     let key = 'AIzaSyBRlnys_JqN4METSJC4x2SQRa3VexpoDHE';
-    fetch('https://www.googleapis.com/civicinfo/v2/representatives?key=' +
-    			key +
-    			'&address=' + zip)
-      .then(result => {
-      	let results = result.json().then(results => {
-          let reps = this.createReps(results.offices, results.officials);
-          this.setReps(reps);
+    let endpoint = 'https://www.googleapis.com/civicinfo/v2/representatives?key=' +
+        key + '&address=' + zip;
 
-          console.log("Offices", results.offices);
-          console.log("Officials", results.officials);
-      	});
- 		});   	
+    $.getJSON( endpoint, function( data ) {
+      console.log("Reps Data", data);
+    })
+    .done((data) => {
+      let reps = _this.createReps(data.offices, data.officials);
+      _this.setReps(reps);
+
+      console.log("Offices", data.offices);
+      console.log("Officials", data.officials);
+    })
+    .fail((jqxhr, textStatus, error) => {
+      let err = textStatus + ", " + error;
+      console.error( "Request Failed: " + err );
+    });
   }
 
 	componentDidMount() {

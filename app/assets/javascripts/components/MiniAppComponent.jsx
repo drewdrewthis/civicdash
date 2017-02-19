@@ -4,6 +4,7 @@ class MiniAppComponent extends React.Component {
     	<div className="mod-mini-app">
         <h3>Representatives for {this.props.zip}</h3>
       	<FindMyRepsComponent zip = {this.props.zip}/>
+      	<VoterInfoComponent zip = {this.props.zip}/>
       </div>
     )
   }
