@@ -47,14 +47,14 @@ class FindMyRepsComponent extends React.Component {
         key + '&address=' + zip;
 
     $.getJSON( endpoint, function( data ) {
-      console.log("Reps Data", data);
+      // console.log("Reps Data", data);
     })
     .done((data) => {
       let reps = _this.createReps(data.offices, data.officials);
       _this.setReps(reps);
 
-      console.log("Offices", data.offices);
-      console.log("Officials", data.officials);
+      // console.log("Offices", data.offices);
+      // console.log("Officials", data.officials);
     })
     .fail((jqxhr, textStatus, error) => {
       let err = textStatus + ", " + error;
@@ -70,6 +70,7 @@ class FindMyRepsComponent extends React.Component {
     if (this.props.zip) {
       return (
         <div>
+          <h3>Representatives for {this.props.zip}</h3>
           { this.renderOffices() }
         </div>
       )

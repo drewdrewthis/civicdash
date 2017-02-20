@@ -1,2 +1,2 @@
-" hidden chars
+r hidden chars
 :set nolist

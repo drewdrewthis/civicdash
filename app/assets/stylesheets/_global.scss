@@ -1,15 +1,18 @@
 // https://designschool.canva.com/blog/website-color-schemes/
 // 23. Unique and Striking
 
-$brand-color-1:	#CF6766; // Crimson Sky
-$brand-color-2: #30415D; // Indigo
-$brand-color-3:	#031424; // Ultramarine
-$brand-color-4:	#8EAEBD; // Light Blue
+$brand-color-1:	  #CF6766; // Crimson Sky
+$brand-color-2:   #30415D; // Indigo
+$brand-color-3:	  #031424; // Ultramarine
+$brand-color-4:	  #8EAEBD; // Light Blue
+$brand-color-5:   #0275d8; // Med Blue
 
-$brand-padding: 1rem;
-$dashed-border: 2px dashed $brand-color-4;
-$border-radius: 10px;
+$brand-padding:   1rem;
+$brand-margin:    1rem;
+$dashed-border:   2px dashed $brand-color-4;
+$border-radius:   10px;
 
+$medium-up:       "(min-width: 992px)";
 
 html,
 body,
@@ -49,12 +52,58 @@ body,
 .mini-apps-container {
   display: flex;
   flex-wrap: wrap;
+  margin: -$brand-margin / 2;
+  flex-direction: column;
+
+  @media #{$medium-up} {
+    flex-direction: row;
+  }
 }
 
 .mod-mini-app {
   border: $dashed-border;
   border-radius: $border-radius;
   padding: $brand-padding;
-  margin: 1rem;
+  margin: $brand-margin / 2;
   flex: 1;
+
+  @media #{$medium-up} {
+    max-height: 85vh;
+    overflow: scroll;
+  }
+}
+
+.mod-news-widget {
+  .news-filters {
+    text-transform: capitalize;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    padding-bottom: $brand-padding;
+    margin-bottom: $brand-margin;
+    border-bottom: 1px solid;
+
+    div {
+      padding: 0 1rem;
+      line-height: 1rem;
+      border-left: 1px solid black;
+      text-align: center;
+      width: 100%;
+
+      &.active,
+      &:hover {
+        color: $brand-color-5;
+        cursor: pointer;
+      }
+    }
+
+    div:first-of-type {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    div:last-of-type {
+      padding-right: 0;
+    }
+  }
 }
