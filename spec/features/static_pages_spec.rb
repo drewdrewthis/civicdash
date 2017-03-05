@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe "StaticPages" do
 
-  describe 'Home page' do
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content 'Sample App'
+  describe 'About page' do
+    it "should have the content 'about'" do
+      visit '/static_pages/about'
+      expect(page).to have_content 'about'
     end
   end
 end

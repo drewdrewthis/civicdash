@@ -1,10 +1,2 @@
-.main
-  header
-    .logo
-      | CivicDash
-    .user-info
-      = react_component('HelloComponent', {name: @user.name, zip: @user.zip})
-  section 
-    = react_component('MainComponent', {user: @user})
-  footer
-    p This is the footer
+section
+  = react_component('MainComponent', {user: @user})

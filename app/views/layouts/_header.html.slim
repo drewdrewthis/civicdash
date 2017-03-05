@@ -1,0 +1,8 @@
+header
+  .logo
+    | CivicDash
+  .user-info
+  	- if @user
+    	= react_component('HelloComponent', {name: @user.name, zip: @user.zip})
+    - else
+    	| Login
