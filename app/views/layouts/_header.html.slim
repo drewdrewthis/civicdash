@@ -1,6 +1,5 @@
 header
-  .logo
-    | CivicDash
+  = link_to 'CivicDash', '/', class: 'logo'
   .user-info
   	- if @user
     	= react_component('HelloComponent', {name: @user.name, zip: @user.zip})
