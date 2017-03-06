@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'pry'
 end
 
 group :development do
@@ -60,4 +61,5 @@ gem 'bootstrap'
 gem 'autoprefixer-rails'
 gem 'scss_lint', require: false
 gem 'react-rails', '~> 1.0'
-
+gem 'phantomjs'
+gem 'watir'
