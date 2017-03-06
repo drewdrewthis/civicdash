@@ -40,6 +40,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'pry'
+  gem 'phantomjs'
+  gem 'watir'
 end
 
 group :development do
