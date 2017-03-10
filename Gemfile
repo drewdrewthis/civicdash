@@ -63,3 +63,4 @@ gem 'scss_lint', require: false
 gem 'react-rails', '~> 1.0'
 gem 'phantomjs'
 gem 'watir'
+gem 'json'

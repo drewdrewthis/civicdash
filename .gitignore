@@ -25,3 +25,6 @@ pids
 *.pid
 *.seed
 *.pid.lock
+
+# Ignore OSX system files
+.DS_Store
