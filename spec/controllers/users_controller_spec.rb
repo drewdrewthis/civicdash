@@ -24,6 +24,12 @@ RSpec.describe UsersController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) do
     skip('Add a hash of attributes valid for your model')
+    {
+      name: 'Name',
+      email: 'test@test.com',
+      password: 'password',
+      password_confirmation: 'password'
+    }
   end
 
   let(:invalid_attributes) do
