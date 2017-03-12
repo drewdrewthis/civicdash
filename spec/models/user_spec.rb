@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'is not valid without a name' do
-    subject.email = "user@example.com"
+    subject.email = 'user@example.com'
     expect(subject).not_to be_valid
   end
 

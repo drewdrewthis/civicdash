@@ -1,10 +1,9 @@
 module ApplicationHelper
-
   def test
     'helper spec works!'
   end
 
-  def scrape_ballotpedia_for_elections url
+  def scrape_ballotpedia_for_elections(url)
     require 'open-uri'
     require 'nokogiri'
     require 'phantomjs'
@@ -16,20 +15,20 @@ module ApplicationHelper
     browser.goto url
 
     if browser.tds.length != 0
-      result = browser.tds(:title => 'State').collect do |td|
+      result = browser.tds(title: 'State').collect do |td|
         tr = td.parent
         state = {}
 
-        state[:title] = tr.td(:title => 'State').text
+        state[:title] = tr.td(title: 'State').text
 
-        if tr.td(:title => 'Locality').exists?
-          state[:desc] = tr.td(:title => 'Locality').text
+        if tr.td(title: 'Locality').exists?
+          state[:desc] = tr.td(title: 'Locality').text
         else
-          state[:desc] = tr.td(:title => 'Description').text
+          state[:desc] = tr.td(title: 'Description').text
         end
 
-        state[:type] = tr.td(:title => 'Type').text
-        state[:date] = tr.td(:title => 'Date').text
+        state[:type] = tr.td(title: 'Type').text
+        state[:date] = tr.td(title: 'Date').text
 
         state
       end
@@ -40,4 +39,3 @@ module ApplicationHelper
     result.to_json
   end
 end
-

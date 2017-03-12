@@ -11,4 +11,3 @@ Rails.application.routes.draw do
   get '/elections/congress', to: 'application#scrape_ballotpedia_for_congress_elections'
   get '/elections/local', to: 'application#scrape_ballotpedia_for_local_elections'
 end
-
