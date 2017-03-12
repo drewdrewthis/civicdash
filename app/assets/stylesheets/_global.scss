@@ -1,10 +1,10 @@
 // https://designschool.canva.com/blog/website-color-schemes/
 // 23. Unique and Striking
 
-$brand-color-1:	  #CF6766; // Crimson Sky
+$brand-color-1:   #CF6766; // Crimson Sky
 $brand-color-2:   #30415D; // Indigo
-$brand-color-3:	  #031424; // Ultramarine
-$brand-color-4:	  #8EAEBD; // Light Blue
+$brand-color-3:   #031424; // Ultramarine
+$brand-color-4:   #8EAEBD; // Light Blue
 $brand-color-5:   #0275d8; // Med Blue
 
 $brand-padding:   1rem;
@@ -37,6 +37,7 @@ body,
     color: white;
     padding: $brand-padding;
     display: flex;
+    justify-content: space-between;
     flex: 0 0 auto;
   }
 
@@ -46,6 +47,28 @@ body,
     color: $brand-color-3;
     flex: 1;
     padding: $brand-padding;
+  }
+
+  footer {
+    font-size: .8rem;
+
+    > * {
+      margin-bottom: 0;
+    }
+
+    .link-list {
+      float: right;
+      list-style: none;
+
+      li {
+        display: inline;
+        margin-right: $brand-margin;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
 
