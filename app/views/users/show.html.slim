@@ -1,0 +1,20 @@
+- provide(:title, @user.name)
+
+p#notice = notice
+h1 
+  = gravatar_for @user
+  | User Profile
+p
+  strong> Name:
+  span = @user.name
+p
+  strong> Email:
+  span = @user.email
+p
+  strong> ID:
+  span = @user.id
+
+
+= link_to 'Edit', edit_user_path(@user)
+'  |
+= link_to 'Back', users_path

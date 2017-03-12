@@ -13,7 +13,10 @@
  */
 
 // Vendor
-@import "bootstrap";
+@import 'bootstrap';
 
 // Global
-@import "global";
+@import 'global';
+@import 'header';
+@import 'footer';
+@import 'forms';

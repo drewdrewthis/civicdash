@@ -1,0 +1,13 @@
+.link-list {
+  float: right;
+  list-style: none;
+
+  li {
+    display: inline;
+    margin-right: $brand-margin;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

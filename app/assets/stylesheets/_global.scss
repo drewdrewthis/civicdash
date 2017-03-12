@@ -1,6 +1,8 @@
 // https://designschool.canva.com/blog/website-color-schemes/
 // 23. Unique and Striking
 
+// scss-lint:disable all
+
 $brand-color-1:   #CF6766; // Crimson Sky
 $brand-color-2:   #30415D; // Indigo
 $brand-color-3:   #031424; // Ultramarine
@@ -49,25 +51,15 @@ body,
     padding: $brand-padding;
   }
 
+  section.main-container {
+    flex: 1;
+  }
+
   footer {
     font-size: .8rem;
 
     > * {
       margin-bottom: 0;
-    }
-
-    .link-list {
-      float: right;
-      list-style: none;
-
-      li {
-        display: inline;
-        margin-right: $brand-margin;
-
-        &:last-of-type {
-          margin-right: 0;
-        }
-      }
     }
   }
 }
@@ -131,8 +123,7 @@ body,
   }
 }
 
-/* Miscellaneous */
-
+// Miscellaneous
 .debug_dump {
   clear: both;
   float: left;
