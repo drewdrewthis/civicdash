@@ -1,3 +1,70 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dashboard-container {
+  display: flex;
+
+  .location-info-group {
+    flex: 1;
+  }
+
+  .updates-group {
+    width: 25rem;
+  }
+}
+
+.location-info-group {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.mod-mini-app {
+  border: $dashed-border;
+  border-radius: $border-radius;
+  padding: $brand-padding;
+  margin: $brand-margin / 2;
+  flex: 1;
+
+  @media #{$medium-up} {
+    max-height: 85vh;
+    overflow: scroll;
+  }
+}
+
+.mod-news-widget {
+  .news-filters {
+    text-transform: capitalize;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    padding-bottom: $brand-padding;
+    margin-bottom: $brand-margin;
+    border-bottom: 1px solid;
+
+    div {
+      padding: 0 1rem;
+      line-height: 1rem;
+      border-left: 1px solid black;
+      text-align: center;
+      width: 100%;
+
+      &.active,
+      &:hover {
+        color: $brand-color-5;
+        cursor: pointer;
+      }
+    }
+
+    div:first-of-type {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    div:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+

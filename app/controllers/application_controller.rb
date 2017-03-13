@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   def provide_user
-    @user = User.find_by(name: 'Jane Doe')
+    @user = User.find_by(id: '1')
   end
 
   def scrape_ballotpedia_for_statewide_elections
