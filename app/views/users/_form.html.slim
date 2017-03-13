@@ -1,8 +1,11 @@
 = form_for(user) do |f|
   - if user.errors.any?
     #error_explanation
-      h2 = pluralize(user.errors.count, 'error')
-        | prohibited this user from being saved:
+      .alert.alert-danger
+        h2 
+          | Please fix the  
+          = pluralize(user.errors.count, 'error')
+          |  below:
 
       ul
         - user.errors.full_messages.each do |message|
@@ -10,18 +13,18 @@
 
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, class: 'form-control'
 
   .field
     = f.label :email
-    = f.email_field :email
+    = f.email_field :email, class: 'form-control'
 
   .field
     = f.label :password
-    = f.password_field :password
+    = f.password_field :password, class: 'form-control'
 
   .field
     = f.label :password_confirmation, 'Re-type Password'
-    = f.password_field :password_confirmation
+    = f.password_field :password_confirmation, class: 'form-control'
   .actions
     = f.submit 'Create my account', class: 'btn btn-primary'
