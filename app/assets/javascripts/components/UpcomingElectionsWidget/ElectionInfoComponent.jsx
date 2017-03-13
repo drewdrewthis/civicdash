@@ -15,8 +15,14 @@ class ElectionInfoComponent extends React.Component {
   }
 
   renderElections() {
+    let loc = 'New York';
+
     if (this.state.elections.length) {
-      return this.state.elections.map(function(election, idx) {
+      return this.state.elections
+        .filter((election) => {
+          return loc == election.title;
+        })
+        .map(function(election, idx) {
         return (
           <li key={idx}>
             <strong>{ election.date }</strong><br/>
