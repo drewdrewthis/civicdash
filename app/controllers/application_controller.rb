@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def scrape_ballotpedia_for_local_elections
-    local_json = scrape_ballotpedia_for_elections 'https://datawrapper.dwcdn.net/dWMFn/3/'
+    local_json = scrape_ballotpedia_for_elections 'https://datawrapper.dwcdn.net/0xQYD/4/'
     render json: local_json
   end
 end

@@ -8,18 +8,20 @@ class ElectionInfoComponent extends React.Component {
 
   setElections(data) {
     this.setState({
-      elections: data.elections
+      elections: data
     });
+
+    sessionStorage.setItem('election_data', JSON.stringify(data));
   }
 
   renderElections() {
     if (this.state.elections.length) {
-      this.state.elections.shift();
       return this.state.elections.map(function(election, idx) {
         return (
-          <div key={idx}>
-            {election.name} &#40;{election.electionDay}&#41;
-          </div>
+          <li key={idx}>
+            <strong>{ election.date }</strong><br/>
+            { election.title } : { election.desc } ( { election.type } )
+          </li>
         )
       });
     } else {
@@ -29,9 +31,7 @@ class ElectionInfoComponent extends React.Component {
 
   getElections() {
     var _this = this;
-    let key = 'AIzaSyBRlnys_JqN4METSJC4x2SQRa3VexpoDHE';
-    let endpoint = 'https://www.googleapis.com/civicinfo/v2/elections?key=' +
-        key;
+    let endpoint = 'http://localhost:3000/elections/local';
 
     $.getJSON( endpoint, function( data ) {
       console.log("Election Data", data);
@@ -44,14 +44,22 @@ class ElectionInfoComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.getElections();
+    let election_data = sessionStorage.getItem('election_data');
+
+    if (election_data) {
+      this.setElections(JSON.parse(election_data));
+    } else {
+      this.getElections();
+    }
   }
 
   render() {
     return (
       <div>
         <h3>Upcoming US Elections</h3>
-        { this.renderElections() }
+        <ul>
+          { this.renderElections() }
+        </ul>
       </div>
     )
   }
